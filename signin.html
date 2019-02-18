@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Queue Sign In </title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Check in</h1>
+    </div>
+    <div class="form">
+    <form method="post" action="learn.php" name="partyForm" onsubmit="return validatePartyInfo()">
+    <div>
+        <label>Name</label>
+        <p>
+            <input type="text" name="customerName" id="customerName" placeholder="Your Name" size="30"/>
+        </p>
+
+        <label>Party Size</label>
+        <p>
+            <select name="partySize" id="partySize">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8+">8+</option>
+            </select>
+        </p>
+        <label>Phone Number</label><p>
+            <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Numbers Only" size="10"/>
+        </p>
+
+        <p>
+        <div class="seatingContainer">
+            <label>Table or Bar?</label>
+            <p>
+            <label class="radio">
+                    <input type="radio" name="seatingChoice" value="table">
+                        Table
+            </label>
+            <label class="radio">
+                <input type="radio" name="seatingChoice" value="bar">
+                        Bar
+            </label>
+            <label class="radio">
+                    <input type="radio" name="seatingChoice" value="tableOrBar">
+                        Either
+            </label>
+        </div>
+            </p>
+        </p>
+    </div>
+    <input type="submit" name="submit" value="Submit"/>
+</form>
+
+    </div>
+
+
+</body>
+
+</html>

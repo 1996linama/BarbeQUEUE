@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+    font-family: calibri;
+    font-size:20px;
+}
+
+header{
+    display: block;
+    background: #F4F4F4;
+    border-bottom:#CCC 5px solid;
+    align-self: center;
+    padding:40px;
+}
+
+p.wait, p.title{
+    font-size:25px;
+}
+
+label {
+    font-size: 20px;
+    padding: 30 px 20 px;
+    margin: 10 px 0;
+    font-family: calibri;
+    font-color: #616468;
+}
+
+input[type=text], [type=number], select{
+    width: 40%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    margin: 10 px;
+    padding: 20 px 10 px;
+    border: 1px solid #616468;
+    border-radius: 10 px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance:textfield; /* for firefox users */
+}
+
+input[type=submit] {
+    font-size: 20px;
+    height: 50px;
+    padding: 20 px 20px;
+    margin: 50px;
+    width:40%;
+    background-color: #616468;
+    color: white;
+    padding: 15 px 15 px;
+    border: none;
+}
+
+input[type=submit]:hover {
+    background-color: #616999;
+}
