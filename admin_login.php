@@ -34,7 +34,11 @@
         <label for="password">Password</label>
     </p>
     <p>
+<<<<<<< HEAD
         <input type="password" name="password" class="adminInput"/>
+=======
+        <input type="password" name="password"/>
+>>>>>>> Minor Changes.
     </p>
         <input type="submit" name="adminInfo" onsubmit="admin_controls.php" class="adminInput" value="Log in"/>
     </form>
