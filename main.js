@@ -1,14 +1,23 @@
+
+var queueSize;
+
 function changePage(x){
     document.location.href=x;
 }
 
-function getWaitTime(){
-    
+function getWaitTime(num){
+    return num;
 }
 
-function validatePartyInfo(){
-    var customerName = document.forms["partyForm"]["customerName"].value;
-    var phoneNumber = document.forms["partyForm"]["phoneNumber"].value;
+function updateQueueSize(size){
+    queueSize = size;
+}
+
+
+
+function validateCustomerInfo(){
+    var customerName = document.forms["customerForm"]["customerName"].value;
+    var phoneNumber = document.forms["customerForm"]["phoneNumber"].value;
   
     if(customerName == null || customerName == ""){
         alert("Please enter a name.");

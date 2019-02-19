@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Queue Successful </title>
-        <script src="main.js"></script>
-    </head>
+<head>
+    <title> Check In Successful </title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="main.js"></script>
+</head>
 
-    <body>
-    
+<body>
     <?php
         require_once('add_party.php');
         $customer_name;
@@ -14,14 +14,13 @@
         $phone_number;
         $seating_choice;
 
-
         if(isset($_POST['submit'])){
             $customer_name = $_POST['customerName'];
             $party_size = $_POST['partySize'];
             $phone_number = $_POST['phoneNumber'];
             
-            
             if(isset($_POST['seatingChoice'])){
+    
                 switch($_POST['seatingChoice']){
                     case 'table':
                         $seating_choice = 'T';        
@@ -37,7 +36,6 @@
             } else {
                 $seating_choice = 'E';
             }
-
         } else {
             echo 'Failure';
             mysqli_stmt_close($statement);
@@ -52,37 +50,38 @@
 
         mysqli_stmt_execute($statement);
 
+        $return_id = mysqli_fetch_assoc((mysqli_query($dbc, 
+            "SELECT customer_id as id FROM customers WHERE customer_name='$customer_name'")));
+        
         if(mysqli_stmt_affected_rows($statement) == 1){
+            echo strtoupper("<h1>Welcome $customer_name</h1>");
+            echo ("Thank you. <br>");
+            echo ("Your estimated waiting time is ");
+            echo "<br>";
+            echo ("Your queue number is ");
+            echo $return_id['id'];
+
             mysqli_stmt_close($statement);
-            mysqli_close($dbc);
         } else {
-            echo mysqli_stmt_affected_rows($statement);
             echo 'Error';
             mysqli_stmt_close($statement);
-            mysqli_close($dbc);
         }
     
-    echo strtoupper("<h1>Welcome $customer_name</h1>");
-    echo ("Thank you. <br>");
-    echo ("Your estimated waiting time is : <br>" );
-
-    $return = mysqli_query($dbc, "SELECT customer_id as id FROM customers WHERE customer_name='$customer_name'");
-
-    echo ("Your place in the line is ");
-    echo $return['id'];
-    
+    mysqli_close($dbc);
+        
     ?>
+    <p>
+    <b> Note: </b> All members of the party must be present in order to be seated.
+    </p>
 
-    <b>Note:</b> All members of the party must be present to be seated.
     <input type="submit" name="return" onclick="changePage('index.php')" value="Return"/>
 
-    </body>
+</body>
 
 <footer>
     <div class="copyright">
         Copyright. All Rights Reserved by 
-        <a target="_blank" rel="nofollow" href="http://github.com/1996linama">Lina Ma</a>.
+            <a target="_blank" rel="nofollow" href="http://github.com/1996linama">Lina Ma</a>.
     </div>
 </footer>
-
 </html>

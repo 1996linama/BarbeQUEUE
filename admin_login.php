@@ -35,10 +35,14 @@
     </p>
     <p>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <input type="password" name="password" class="adminInput"/>
 =======
         <input type="password" name="password"/>
 >>>>>>> Minor Changes.
+=======
+        <input type="password" name="password" class="adminInput"/>
+>>>>>>> Updates, layout changes, more functionality.
     </p>
         <input type="submit" name="adminInfo" onsubmit="admin_controls.php" class="adminInput" value="Log in"/>
     </form>
