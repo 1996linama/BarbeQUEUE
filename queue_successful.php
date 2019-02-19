@@ -20,17 +20,22 @@
             $party_size = $_POST['partySize'];
             $phone_number = $_POST['phoneNumber'];
             
-            switch($_POST['seatingChoice']){
-                case 'table':
-                    $seating_choice = 'T';        
-                    break;
-                case 'bar':
-                    $seating_choice = 'B';
-                    break;
-                case 'tableOrBar':
-                default:
-                    $seating_choice = 'E';
-                    break;
+            
+            if(isset($_POST['seatingChoice'])){
+                switch($_POST['seatingChoice']){
+                    case 'table':
+                        $seating_choice = 'T';        
+                        break;
+                    case 'bar':
+                        $seating_choice = 'B';
+                        break;
+                    case 'tableOrBar':
+                    default:
+                        $seating_choice = 'E';
+                        break;
+                }
+            } else {
+                $seating_choice = 'E';
             }
 
         } else {
@@ -60,11 +65,24 @@
     echo strtoupper("<h1>Welcome $customer_name</h1>");
     echo ("Thank you. <br>");
     echo ("Your estimated waiting time is : <br>" );
-    echo ("Your place in the line is <br>");
+
+    $return = mysqli_query($dbc, "SELECT customer_id as id FROM customers WHERE customer_name='$customer_name'");
+
+    echo ("Your place in the line is ");
+    echo $return['id'];
     
     ?>
 
+    <b>Note:</b> All members of the party must be present to be seated.
     <input type="submit" name="return" onclick="changePage('index.php')" value="Return"/>
 
     </body>
+
+<footer>
+    <div class="copyright">
+        Copyright. All Rights Reserved by 
+        <a target="_blank" rel="nofollow" href="http://github.com/1996linama">Lina Ma</a>.
+    </div>
+</footer>
+
 </html>

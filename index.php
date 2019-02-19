@@ -9,46 +9,63 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script src="main.js"></script>
 </head>
+<!-- body -->
 <body>
 <header>
-    <h1>Get BarbeQUEUED!</h1>
-
+    <h1>Barbequeue</h1>
 </header>
 
 <div class="container">
-
-
         <div class="queue_display_container">
-            <p class="title">
-                Queue
+            <p class="queue_title">
+                Current Queue
             </p>
-        
-            <?php
+            <table id="queue_table">
+                <tr>
+                    <th>Name</th>
+                    <th>Number</th>
+                </tr>
+             <?php
                 require_once('add_party.php');
                 $query = "SELECT * FROM customers";
 
                 $response = mysqli_query($dbc, $query) or die ("Error query");
                 
                 while ($row = mysqli_fetch_assoc($response)){
-                        
-                        echo $row['customer_name'];
-                        
-                        echo "<br>";
+                        echo "<tr>";
+                        echo "<td>" . $row['customer_name'] . "</td>";
+                        echo "<td>" . $row['customer_id'] . "</td>";
+                        echo "</tr>";
                 }
                 
-
-                mysqli_close($dbc);
-
                 ?>
-
+             </table>
 
         </div>
-        <p class="wait">
+        <p class="queue_info">
             <b>The current wait time is:</b>
         </p>
+        <p class="queue_info">
+            <b>The number of parties in line: </b>
+                <?php 
+                $return = mysqli_fetch_assoc((mysqli_query($dbc, "SELECT COUNT(*) as total FROM customers")));
+                echo $return['total']; 
+                ?>
+        </p>
+
+        <?php mysqli_close($dbc); ?>
         <input type="submit" name="checkInButton" action="signin.html" onclick="changePage('signin.html')" value="Check in"/>
 </div>
 
 
 </body>
+<!-- footer -->
+<footer>
+        <div class="copyright">
+            Copyright. All Rights Reserved by 
+            <a target="_blank" rel="nofollow" href="http://github.com/1996linama">Lina Ma</a>.
+        </div>
+</footer>
+
+
 </html>
