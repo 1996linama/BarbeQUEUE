@@ -1,19 +1,7 @@
 
-var queueSize;
-
 function changePage(x){
     document.location.href=x;
 }
-
-function getWaitTime(num){
-    return num;
-}
-
-function updateQueueSize(size){
-    queueSize = size;
-}
-
-
 
 function validateCustomerInfo(){
     var customerName = document.forms["customerForm"]["customerName"].value;
@@ -36,4 +24,11 @@ function validateCustomerInfo(){
 
     return true;
     
+}
+
+
+function changeInputs(){
+    var element = document.querySelector('div.input_container');
+    document.getElementById("header");
+
 }
