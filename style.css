@@ -9,6 +9,7 @@ body {
 
 header {
     margin-top: 0;
+    height: 70px;
     display: inline-block;
     font-family: Lato;
     font-size: 55px;
@@ -95,12 +96,12 @@ table#queue_table tr:nth-child(even) {
 table#queue_table th {
     background-color: #3c3c3c;
     color: #fff;
-    font-size: 12px;
+    font-size: 15px;
     
 }
 
 th, td {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 300;
     letter-spacing: 1px;
     padding: 7px 4px 0px 4px;
@@ -109,6 +110,11 @@ th, td {
     text-align: center;
     margin: 4px 4px 4px 4px;
     font-family: Open Sans;
+}
+
+td {
+    font-weight: 200;
+    height: 25px;
 }
 
 input[type=text], [type=number], [type=password], select#partySize {
@@ -200,12 +206,12 @@ ul#admin_nav_menu li a:hover{
     background: #af4732;
 }
 
-ul#admin_nav_menu li a.current{
+ul#admin_nav_menu li a.active{
     color: #af4732;
     background: #fff;
 }
 
-ul#admin_nav_menu li a.current:hover{
+ul#admin_nav_menu li a.active:hover{
     color: #3c3c3c;
 }
 
@@ -239,8 +245,7 @@ ul#admin_nav_menu li a.current:hover{
     display: inline-block;
     text-align: center;
     margin: 2px 0px 0px 0px;
-    background: #D0D0D0;
-    overflow: auto;
+    overflow: hidden;
 }
 
 #input_container {
@@ -286,13 +291,35 @@ ul#actions_menu {
     padding: 0px 0px 10px 0px;
     list-style-type: none;
     width: auto;
-    display: block;
+    display: inline-block;
     font-size: 15px;
 
 }
 
-ul#actions_menu li{
+ul#actions_menu li {
     display: block;
     float: left;
     margin:0px 20px 0px 20px;
+}
+
+button.action {
+    background: #FFF;
+    border: none;
+    font-family: Open Sans;
+    font-size: 12px;
+    color: #af4732;
+    cursor: pointer;
+}
+
+button.action:hover {
+    color: #3c3c3c;
+}
+
+#remove_container, #assign_container, #alter_container {
+    background-color: #ccc;
+    height: 100px;
+    width: 100%;
+    margin: auto;
+    display: none;
+    overflow: visible;
 }

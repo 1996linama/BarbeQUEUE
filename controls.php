@@ -9,7 +9,6 @@ function executeSortRequest($request){
     
     for($i = 0; $i < count($request); ++$i){
            $statement .= $request[$i] . " " . $request[++$i];
-           echo $i;
            if($i >= 1 && $i < count($request) - 1){
                $statement .= ", ";
            }
@@ -17,8 +16,7 @@ function executeSortRequest($request){
     return $statement;
 }
 
-
-function printTable($dbc, $query){
+function printQueueTable($dbc, $query){
     $response = mysqli_query($dbc, $query);
     while($row = mysqli_fetch_assoc($response)){
         echo "<tr>";

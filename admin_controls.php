@@ -9,6 +9,7 @@
 <head>
     <title>BarbeQUEUE Admin Controls</title>
     <link rel="stylesheet" href="style.css"/>
+
 </head>
 <body>
     <div id="container">
@@ -17,7 +18,7 @@
         <div id="nav_container">
             <ul id="admin_nav_menu">
                 <li><a href=""><span>Home</span></a></li>
-                <li><a href="" class="current"><span>Show Queue</span></a></li>
+                <li><a href="" class="active"><span>Show Queue</span></a></li>
                 <li><a href=""><span>Show Tables</span></a></li>
                 <li><a href=""><span>Staff</span></a></li>
                 <li><a href=""><span>Restart Day</span></a></li>
@@ -30,11 +31,23 @@
                 <div id="actions_container">
                     <div id="actions_menu_container">
                         <ul id="actions_menu">
-                            <li> Assign Customer To Table </li>
-                            <li> Remove Customer From Queue </li> 
-                            <li> Alter Customer Information </li>
+                            <li> <button id="assign_customer" class="action"> Assign Customer To Table </button> </li>
+                            <li> <button id="remove_customer" class="action"> Remove Customer From Queue </button> </li> 
+                            <li> <button id="alter_customer" class="action"> Alter Customer Information </button> </li>
                         </ul>
-                    </div>
+                    </div> <!-- end of actions menu container -->
+                    <div id="options_container">
+                        
+                        <div id="assign_container">
+                            This is content right here.
+                        </div> <!-- end of customers assign container -->
+                        <div id="remove_container">
+                            No content here.
+                        </div> <!-- end of customers remove container -->
+                        <div id="alter_container">
+                            Are you sure?
+                        </div> <!-- end of customers alter container -->
+                    </div> <!-- end of options container --> 
                     <div id="actions_sort_container">
                         <label class="script"> Sort By </label>
                         <form method="post" action="admin_controls.php">
@@ -56,13 +69,10 @@
                             <option value="asc">Ascending</option>
                             <option value="desc">Descending</option>
                         </select>
-                        <input class="actions_sort" type="submit" value="sort"/>
+                        <input class="actions_sort" type="submit" value="Sort"/>
                     </form>
-                    </div> <!-- end of actions sort container -->
-                </div>  <!-- end of actions container -->    
-                <div id="options_container">
-                    content
-                </div> <!-- end of options container --> 
+                    </div> <!-- end of actions container -->
+            </div>  <!-- end of actions container -->    
             </div> <!-- end of input container -->
             <div id="display_container">
 
@@ -93,18 +103,17 @@
                     array_push($sortRequestStack, 'customer_id', $_POST['sort_customer_id']);
                 
                 } 
-                printTable($dbc, executeSortRequest($sortRequestStack));
+                printQueueTable($dbc, executeSortRequest($sortRequestStack));
 
             ?>
             </table>
-
 
             </div> <!-- end of display container -->
         </div> <!-- end of workspace container --> 
 
 </div>
 
-
+    <script src="main.js"></script>
     </body>
 
 </html>
