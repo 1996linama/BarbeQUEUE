@@ -9,6 +9,7 @@
 <body>
     <?php
         require_once('sys.php');
+        include "controls.php";
         $customer_name;
         $party_size;
         $phone_number;
@@ -44,7 +45,8 @@
             echo strtoupper("<h1>Welcome $customer_name</h1>");
             echo ("Thank you. <br>");
             echo ("Your estimated waiting time is ");
-            echo "<br>";
+            echo calculateEstimatedWaitTime($dbc);
+            echo " minutes. <br>";
             echo ("Your queue number is ");
             echo $return_id['id'];
 

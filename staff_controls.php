@@ -21,7 +21,7 @@ header("Refresh: 40");
                 <li><a href="admin_controls.php"><span>Show Queue</span></a></li>
                 <li><a href="table_controls.php"><span>Show Tables</span></a></li>
                 <li><a href="staff_controls.php" class="active"><span>Staff</span></a></li>
-                <li><a href=""><span>Restart Day</span></a></li>
+                <li><a action="onClickForClearQueue()"><span>Restart Day</span></a></li>
                 <li><a href=""><span>Log Out</span></a></li>
             </ul>
         </div> <!-- end of nav container -->

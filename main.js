@@ -62,9 +62,9 @@ function displayContainer(div) {
      }
    } 
 
-function onClear(){
+function onClickForClearQueue(){
     if(confirm("Are you sure you want to clear Queue?")){
-        window.location.href="admin_controls.php?action=clear_queue";
+        window.location.href="restart_day.php";
 
     }
 }

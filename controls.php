@@ -6,7 +6,7 @@ function calculateEstimatedWaitTime($dbc){
     $customers_total = mysqli_fetch_assoc($customers_result);
     $tables_total = mysqli_fetch_assoc($customers_result);
 
-    if($customers_total['total'] == 0 || $customers_total['total'] > $tables_total['total']){
+    if($customers_total['total'] == 0 || $customers_total['total'] < $tables_total['total']){
         return 0;
     }
     

@@ -1,7 +1,13 @@
 # BarbeQUEUE 
 
 ## <b>Project Description</b>
-An online restaurant management system.
+A restaurant queue and customer management web-based system built for daily restaurant operations.
+
+On the interactive customer-facing application side, customers enter their personal information to be queued in.
+
+A clean dashboard is provided for admin control effortlessly handle information received from the consumer-end and provides functionalities for sorting and manipulating data situated for daily restaurant operations.
+
+Operations include assigning tables, removing customers from the database, altering information.
 
 <p>
 
@@ -11,14 +17,33 @@ Created by Lina Ma (@1996linama).
 <p>
   
 ## <b> Demo </b> 
-<img src="" width="400" height="300" />
+
+### Customer-facing interface 
+<i> index.php </i>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/index.png" width="400" height="300" />
+
+<i> queue_checkin.php </i>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/queue_checkin.png" width="400" height="300" />
+
+<i> queue_success.php </i>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/queue_success.png" width="400" height="300" />
+
+### Admin Dashboard
+<i> admin_login.php </i>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/admin_login.png" width="400" height="300" />
+
+<i> admin_controls.php </i>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/admin_controls.png" width="400" height="300" />
 
 ## <b> Project Status </b> 
 Currently ongoing.<p>
 
 ## <b> Features </b>
-* Admin control
-
+* Queue system
+* Admin control dashboard
+* Login System
+* Form validation
+* Sort and manipulate data
 
 #### Tools
 Visual Studio Code
