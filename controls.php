@@ -1,5 +1,18 @@
 <?php
 
+function calculateEstimatedWaitTime($dbc){
+    $customers_result = query($dbc, "SELECT COUNT(customer_name) as total FROM customers");
+    $tables_result = query($dbc, "SELECT COUNT(table_num) as total FROM tables WHERE available='Y'");
+    $customers_total = mysqli_fetch_assoc($customers_result);
+    $tables_total = mysqli_fetch_assoc($customers_result);
+
+    if($customers_total['total'] == 0 || $customers_total['total'] > $tables_total['total']){
+        return 0;
+    }
+    
+    return ($customers_total['total'] * 5) - ($tables_total['total'] * 5);
+}
+
 function executeSortRequest($table, $request){    
     if($request == null || empty($request)){
         return "Select * FROM $table";
@@ -47,7 +60,6 @@ function populateUnassignedTableOptions($dbc){
         echo '<option value="' . $row['table_num'] . '">#' . $row['table_num'] . '</option>';
     }
 }
-
 
 function getTableSize($dbc, $table){
     $sql = "SELECT Count(*) FROM $table";
@@ -102,10 +114,6 @@ function assignTable($dbc, $table_num){
 
 function removeCustomer($dbc, $name){
     query($dbc, "DELETE FROM customers WHERE customer_name='$name'");
-}
-
-function retrieveMatch($dbc){
-
 }
 
 function clearQueue($dbc){

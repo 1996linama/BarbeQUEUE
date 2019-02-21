@@ -2,7 +2,7 @@
 header("Refresh: 40");
     session_start();
     include "controls.php";
-    include "add_party.php";
+    include "sys.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,14 +70,14 @@ header("Refresh: 40");
                     </div> <!-- end of options container --> 
                     <div id="actions_sort_container">
                         <label class="script"> Sort By </label>
-                        <form method="post" action="admin_controls.php">
+                        <form method="post" action="table_controls.php">
                         <label id="sort_type"> Table Number </label>
                         <select name="sort_table_number" class="actions_sort">
                             <option value="" ></option>
                             <option value="asc">Ascending</option>
                             <option value="desc">Descending</option>
                         </select>
-                        <label id="sort_type"> Table Size </label>
+                        <label id="sort_type"> Seat Capacity </label>
                         <select name="sort_table_size" class="actions_sort">
                             <option value=""></option>
                             <option value="asc">Ascending</option>
@@ -99,7 +99,7 @@ header("Refresh: 40");
                     <table id="queue_table">
                         <tr>
                             <th>Table Number</th>
-                            <th>Table Size</th>
+                            <th>Seat Capacity</th>
                             <th>Available</th>
                             <th>Assigned Server</th>
                             <th>Reserved</th>
@@ -108,7 +108,7 @@ header("Refresh: 40");
                 <div id="display_content_container">
 
             <?php
-                require_once('add_party.php');
+                require_once('sys.php');
 
                 $sortRequestStack = array();
 
@@ -121,7 +121,7 @@ header("Refresh: 40");
                 } 
 
                 if(isset($_POST['sort_available']) && $_POST['sort_available'] != ""){
-                    array_push($sortRequestStack, 'available', $_POST['available']);
+                    array_push($sortRequestStack, 'available', $_POST['sort_available']);
                 
                 } 
 

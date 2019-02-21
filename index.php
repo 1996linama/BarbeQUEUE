@@ -1,7 +1,7 @@
 <?php
-    include_once 'add_party.php';
+    include_once "sys.php";
+    include "controls.php";
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +26,7 @@
                     <th>Number</th>
                 </tr>
              <?php
-                require_once('add_party.php');
+                require_once('sys.php');
                 $query = "SELECT * FROM customers";
 
                 $response = mysqli_query($dbc, $query) or die ("Error query");
@@ -43,10 +43,14 @@
 
         </div>
         <p class="queue_info">
-            <b>The current wait time is:</b>
+            <b>Current wait time is: </b>
+            <?php
+            echo calculateEstimatedWaitTime($dbc);
+            ?>
+            minutes.
         </p>
         <p class="queue_info">
-            <b>The number of parties in line: </b>
+            <b>Number of parties in line: </b>
                 <?php 
                 $return = mysqli_fetch_assoc((mysqli_query($dbc, "SELECT COUNT(*) as total FROM customers")));
                 echo $return['total']; 

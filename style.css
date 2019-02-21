@@ -127,7 +127,7 @@ td {
     height: 25px;
 }
 
-input[type=text], [type=number], [type=password], select#partySize {
+input[type=text], [type=number], [type=password], select#party_size {
     width: 40%;
     height: 50px;
     font-size: 20px;

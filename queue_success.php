@@ -8,37 +8,24 @@
 
 <body>
     <?php
-        require_once('add_party.php');
+        require_once('sys.php');
         $customer_name;
         $party_size;
         $phone_number;
         $seating_choice;
 
         if(isset($_POST['submit'])){
-            $customer_name = $_POST['customerName'];
-            $party_size = $_POST['partySize'];
-            $phone_number = $_POST['phoneNumber'];
+            $customer_name = $_POST['customer_name'];
+            $party_size = $_POST['party_size'];
+            $phone_number = $_POST['phone_number'];
             
-            if(isset($_POST['seatingChoice'])){
-    
-                switch($_POST['seatingChoice']){
-                    case 'table':
-                        $seating_choice = 'T';        
-                        break;
-                    case 'bar':
-                        $seating_choice = 'B';
-                        break;
-                    case 'tableOrBar':
-                    default:
-                        $seating_choice = 'E';
-                        break;
-                }
+            if(isset($_POST['seating_choice'])){
+                $seating_choice = $_POST['seating_choice'];
             } else {
                 $seating_choice = 'E';
             }
         } else {
             echo 'Failure';
-            mysqli_stmt_close($statement);
             mysqli_close($dbc);
         }
 

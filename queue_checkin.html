@@ -7,18 +7,18 @@
 </head>
 <body>
     <div id="body" class="container">
-        <div class="checkInHeader">
+        <div class="check_in_header">
             <h1>Check in</h1>
         </div>
         <div class="form">
-            <form method="post" action="queue_success.php" name="customerForm" onsubmit="return validateCustomerInfo()">
-                <label for="customerName">Name</label>
+            <form method="post" action="queue_success.php" name="customer_form" onsubmit="return validateCustomerInfo()">
+                <label for="customer_name">Name</label>
                 <p>
-                    <input type="text" name="customerName" id="customerName" placeholder="Your Name" size="30" />
+                    <input type="text" name="customer_name" id="customer_name" placeholder="Your Name" size="30" />
                 </p>
-                <label for="partySize">Party Size</label>
+                <label for="party_size">Party Size</label>
                 <p>
-                    <select name="partySize" id="partySize">
+                    <select name="party_size" id="party_size">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -31,22 +31,22 @@
                 </p>
                 <label>Phone Number</label>
                 <p>
-                    <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Numbers Only" size="10" />
+                    <input type="number" name="phone_number" id="phone_number" placeholder="Numbers Only" size="10" />
                 </p>
                 <p>
-                    <div class="seatingContainer">
+                    <div class="seating_container">
                         <label>Table or Bar?</label>
                         <p>
                             <label class="radio">
-                                <input type="radio" name="seatingChoice" value="table">
+                                <input type="radio" name="seating_choice" value="T">
                                 Table
                             </label>
                             <label class="radio">
-                                <input type="radio" name="seatingChoice" value="bar">
+                                <input type="radio" name="seating_choice" value="B">
                                 Bar
                             </label>
                             <label class="radio">
-                                <input type="radio" name="seatingChoice" value="tableOrBar">
+                                <input type="radio" name="seating_choice" value="E">
                                 Either
                             </label>
                     </div> <!-- seating container ends-->

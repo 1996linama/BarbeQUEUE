@@ -2,7 +2,7 @@
 header("Refresh: 40");
     session_start();
     include "controls.php";
-    include "add_party.php";
+    include "sys.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -125,7 +125,7 @@ header("Refresh: 40");
                 <div id="display_content_container">
 
             <?php
-                require_once('add_party.php');
+                require_once('sys.php');
 
                 $sortRequestStack = array();
 

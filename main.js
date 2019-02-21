@@ -4,8 +4,8 @@ function changePage(x){
 }
 
 function validateCustomerInfo(){
-    var customerName = document.forms["customerForm"]["customerName"].value;
-    var phoneNumber = document.forms["customerForm"]["phoneNumber"].value;
+    var customerName = document.forms["customer_form"]["customer_name"].value;
+    var phoneNumber = document.forms["customer_form"]["phone_number"].value;
   
     if(customerName == null || customerName == ""){
         alert("Please enter a name.");
@@ -61,7 +61,6 @@ function displayContainer(div) {
        div.style.display = "inline-block";
      }
    } 
-
 
 function onClear(){
     if(confirm("Are you sure you want to clear Queue?")){
