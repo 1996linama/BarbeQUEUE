@@ -19,22 +19,22 @@ Created by Lina Ma (@1996linama).
 ## <b> Demo </b> 
 
 ### Customer-facing interface 
-<i> index.php </i>
-<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/index.png" width="400" height="300" />
-
-<i> queue_checkin.php </i>
-<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/queue_checkin.png" width="400" height="300" />
-
-<i> queue_success.php </i>
-<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/queue_success.png" width="400" height="300" />
-
+<i> index.php </i><br>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/screenshots/index.png" width="400" height="300" />
+</p><p>
+<i> queue_checkin.php </i><br>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/screenshots/queue_checkin.png" width="400" height="300" />
+</p><p>
+<i> queue_success.php </i><br>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/screenshots/queue_success.png" width="400" height="300" />
+</p><p>
 ### Admin Dashboard
-<i> admin_login.php </i>
-<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/admin_login.png" width="400" height="300" />
-
-<i> admin_controls.php </i>
-<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/BarbeQUEUE/screenshots/admin_controls.png" width="400" height="300" />
-
+<i> admin_login.php </i><br>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/screenshots/admin_login.png" width="400" height="300" />
+</p><p>
+<i> admin_controls.php </i><br>
+<img src="https://github.com/1996linama/BarbeQUEUE/blob/master/screenshots/admin_controls.png" width="400" height="300" />
+</p>
 ## <b> Project Status </b> 
 Currently ongoing.<p>
 
