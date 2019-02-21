@@ -61,3 +61,11 @@ function displayContainer(div) {
        div.style.display = "inline-block";
      }
    } 
+
+
+function onClear(){
+    if(confirm("Are you sure you want to clear Queue?")){
+        window.location.href="admin_controls.php?action=clear_queue";
+
+    }
+}

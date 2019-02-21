@@ -54,7 +54,7 @@
         </p>
 
         <?php mysqli_close($dbc); ?>
-        <input type="submit" name="checkInButton" action="signin.html" onclick="changePage('signin.html')" value="Check in"/>
+        <input type="submit" name="check_in_button"  onclick="changePage('queue_checkin.html')" value="Check in"/>
 </div>
 
 
