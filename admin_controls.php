@@ -2,14 +2,12 @@
 header("Refresh: 40");
     session_start();
     include "controls.php";
-    include "sys.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>BarbeQUEUE Admin Controls</title>
-    <link rel="stylesheet" href="style.css"/>
-    
+    <link rel="stylesheet" href="style.css"/>  
 </head>
 <body>
     <div id="container">
@@ -21,7 +19,7 @@ header("Refresh: 40");
                 <li><a href="admin_controls.php" class="active"><span>Show Queue</span></a></li>
                 <li><a href="table_controls.php"><span>Show Tables</span></a></li>
                 <li><a href=""><span>Staff</span></a></li>
-                <li><a action="onClickForClearQueue()"><span>Restart Day</span></a></li>
+                <li><a action="onClickForRestartDay()"><span>Restart Day</span></a></li>
                 <li><a href=""><span>Log Out</span></a></li>
             </ul>
         </div> <!-- end of nav container -->
@@ -34,7 +32,7 @@ header("Refresh: 40");
                             <li> <button id="assign_customer" class="action"> Assign Customer To Table </button> </li>
                             <li> <button id="remove_customer" class="action"> Remove Customer From Queue </button> </li> 
                             <li> <button id="alter_customer" class="action"> Alter Customer Information </button> </li>
-                            <li> <button id="clear_queue" class="action"> Clear Queue </button> </li>
+                            <li> <button id="clear_queue" onclick="onClickForClearQueue()" class="action"> Clear Queue </button> </li>
                         </ul>
                     </div> <!-- end of actions menu container -->
                     <div id="options_container">
@@ -69,20 +67,25 @@ header("Refresh: 40");
                         <div id="alter_container">
                             <form method="post" action="admin_controls.php">
                             <label class="script_small"> Alter Customer Information </label>
+                            <label class="script_smaller"> Select a Customer </label>
                                 <select name="customers_assign" class="options">
                                     <option value=""></option>
                                     <?php populateCustomerOptions($dbc) ?>
                                 </select>
+                                <input type="submit" class="options" value="Select"/>
                                 <!-- <input type="text" name="phone_number" class="options"/> -->
-                                <input type="radio" name="seating_preference" value='T' class="options"/>
+                            </form>
+                        </div> <!-- end of customers alter container -->
+                        <div id="alter_selected_customer_container">
+                        <label class="script_small"> Alter Customer Information </label>
+                        <input type="radio" name="seating_preference" value='T' class="options"/>
                                 Table
                                 <input type="radio" name="seating_preference" value='B' class="options"/>
                                 Bar 
                                 <input type="radio" name="seating_preference" value='E' class="options"/>
                                 Either
-                            <input type="submit" class="options" value="Alter"/>
-                            </form>
-                        </div> <!-- end of customers alter container -->
+                        <input type="submit" class="options" value="Alter"/>
+                        </div>
                     </div> <!-- end of options container --> 
                     <div id="actions_sort_container">
                         <label class="script"> Sort By </label>
@@ -138,25 +141,17 @@ header("Refresh: 40");
                 } 
 
                 if(isset($_POST['sort_customer_id']) && $_POST['sort_customer_id'] != ""){
-                    array_push($sortRequestStack, 'customer_id', $_POST['sort_customer_id']);
-                
+                    array_push($sortRequestStack, 'customer_id', $_POST['sort_customer_id']);   
                 } 
 
                 if(isset($_POST['remove_selection']) && $_POST['remove_selection'] != ""){
                     echo $_POST['remove_selection'];
                     removeCustomer($dbc, $_POST['remove_selection']);
                 }
-            
-                if(isset($_GET['action'])){
-                    if($_GET['action'] == "clear_queue"){
-                        clearQueue($dbc);
-                   
-                    }
-                }
 
                 printQueueTable($dbc, executeSortRequest('customers', $sortRequestStack));
-
             ?>
+
             </table>
                 </div>
             </div> <!-- end of display container -->

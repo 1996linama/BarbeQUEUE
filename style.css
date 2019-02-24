@@ -345,7 +345,7 @@ button.action:hover {
     color: #3c3c3c;
 }
 
-#remove_container, #assign_container, #alter_container {
+#remove_container, #assign_container, #alter_container, #alter_selected_customer_container {
     height: 100%;
     width: 100%;
     margin: auto;
