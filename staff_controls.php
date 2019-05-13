@@ -7,7 +7,7 @@ header("Refresh: 40");
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BarbeQUEUE Admin Controls</title>
+    <title>BarbeQUEUE - Admin Controls</title>
     <link rel="stylesheet" href="style.css"/>
     
 </head>

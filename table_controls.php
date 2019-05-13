@@ -7,13 +7,13 @@ header("Refresh: 40");
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BarbeQUEUE Admin Controls</title>
+    <title>BarbeQUEUE - Table Controls</title>
     <link rel="stylesheet" href="style.css"/>
     
 </head>
 <body>
     <div id="container">
-        <h2>Barbequeue Admin Controls</h2>
+        <h2>Barbequeue Table Controls</h2>
         <hr/>
         <div id="nav_container">
             <ul id="admin_nav_menu">
@@ -40,7 +40,7 @@ header("Refresh: 40");
                         <div id="assign_container">
                             <div id="assign_inputs_container">
                             <form method="post" action="">
-                                    <label class="script_small"> Assign Server  </label>
+                                    <label class="script_small"> Assign Server </label>
                                     <select name="server_assign" class="options">
                                         <option value=""></option>
                                         <?php populateStaffOptions($dbc) ?>
@@ -126,16 +126,14 @@ header("Refresh: 40");
                 } 
 
                 printTablesTable($dbc, executeSortRequest('tables', $sortRequestStack));
-
             ?>
             </table>
                 </div>
             </div> <!-- end of display container -->
         </div> <!-- end of workspace container --> 
 
-</div>
+    </div>
 
     <script src="main.js"></script>
     </body>
-
 </html>

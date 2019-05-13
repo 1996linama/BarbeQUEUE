@@ -1,6 +1,6 @@
 <?php
  if(isset($_POST['adminInfo'])){
-    require "add_party.php";
+    require "sys.php";
     $username = $_POST['username'];
     $password = $_POST['password'];
     $access = mysqli_query($dbc, "SELECT * FROM admins WHERE username='$username' AND password='$password'");
@@ -8,9 +8,8 @@
         $_SESSION['username'] = $username;
         header('Location: admin_controls.php');
     } else {
-        echo "The username and password is invalid";
+        echo "The username and password is invalid.";
     }
-
 }
 
 ?>
@@ -18,7 +17,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BarbeQUEUE Admin Log In </title>
+    <title>BarbeQUEUE - Admin Log In </title>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>

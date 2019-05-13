@@ -21,6 +21,7 @@ function validateCustomerInfo() {
         alert("Please enter a phone number.");
         return false;
     }
+    
     if (phoneNumber.length != 10) {
         alert("Phone number requires 10 digits.");
         return false;
@@ -51,6 +52,11 @@ function displayRemoveCustomer() {
 function displayAlterCustomer() {
     displayContainer($('alter_container'));
     hideContainers($('assign_container'), $('remove_container'));
+}
+
+function displayAlterInfo() {
+    displayContainer($('alter_selected_customer_container'));
+    $('alter_container').style.display = "none";
 }
 
 function hideContainers(div1, div2) {

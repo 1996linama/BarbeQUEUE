@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title> BarbeQUEUE Check In </title>
+    <title>BarbeQUEUE - Check In </title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="main.js"></script>
 </head>
+
 <body>
     <div id="body" class="container">
         <div class="check_in_header">
             <h1>Check in</h1>
         </div>
         <div class="form">
-            <form method="post" action="queue_success.php" name="customer_form" onsubmit="return validateCustomerInfo()">
+            <form method="post" action="queue_success.php" name="customer_form"
+                onsubmit="return validateCustomerInfo()">
                 <label for="customer_name">Name</label>
                 <p>
                     <input type="text" name="customer_name" id="customer_name" placeholder="Your Name" size="30" />

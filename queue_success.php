@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Check In Successful </title>
+    <title>BarbeQUEUE - Check In Successful </title>
     <link rel="stylesheet" href="style.css"/>
     <script src="main.js"></script>
 </head>
@@ -57,7 +57,7 @@
         }
     
     mysqli_close($dbc);
-        
+       
     ?>
     <p>
     <b> Note: </b> All members of the party must be present in order to be seated.

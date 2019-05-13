@@ -6,7 +6,7 @@ header("Refresh: 40");
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BarbeQUEUE Admin Controls</title>
+    <title>BarbeQUEUE - Admin Controls</title>
     <link rel="stylesheet" href="style.css"/>  
 </head>
 <body>
@@ -18,7 +18,7 @@ header("Refresh: 40");
                 <li><a href=""><span>Home</span></a></li>
                 <li><a href="admin_controls.php" class="active"><span>Show Queue</span></a></li>
                 <li><a href="table_controls.php"><span>Show Tables</span></a></li>
-                <li><a href=""><span>Staff</span></a></li>
+                <li><a href="staff_controls.php"><span>Staff</span></a></li>
                 <li><a action="onClickForRestartDay()"><span>Restart Day</span></a></li>
                 <li><a href=""><span>Log Out</span></a></li>
             </ul>
@@ -65,26 +65,29 @@ header("Refresh: 40");
                             </form>
                         </div> <!-- end of customers remove container -->
                         <div id="alter_container">
-                            <form method="post" action="admin_controls.php">
+                            <form method="post" action="includes/alter_customer_info.php">
                             <label class="script_small"> Alter Customer Information </label>
                             <label class="script_smaller"> Select a Customer </label>
-                                <select name="customers_assign" class="options">
+                                <select name="customer_alter" class="options">
                                     <option value=""></option>
                                     <?php populateCustomerOptions($dbc) ?>
                                 </select>
-                                <input type="submit" class="options" value="Select"/>
+                                <input type="submit" class="options" onclick="displayAlterInfo()" value="Select"/>
                                 <!-- <input type="text" name="phone_number" class="options"/> -->
-                            </form>
                         </div> <!-- end of customers alter container -->
                         <div id="alter_selected_customer_container">
-                        <label class="script_small"> Alter Customer Information </label>
-                        <input type="radio" name="seating_preference" value='T' class="options"/>
-                                Table
-                                <input type="radio" name="seating_preference" value='B' class="options"/>
-                                Bar 
-                                <input type="radio" name="seating_preference" value='E' class="options"/>
-                                Either
-                        <input type="submit" class="options" value="Alter"/>
+                        <label class="script_smaller">Change Phone Number</label>
+                        <input type="text" name="change_phone_number" class="options"/>
+                        <input type="submit" class="options" value="Change"/>
+                        <label class="script_smaller">Change Seating Preference</label>
+                        <select name="change_seating_preference" class="options">
+                            <option value=""></option>
+                            <option value="T">Table</option>
+                            <option value="B">Bar</option>
+                            <option value="E">Either</option>
+                        </select>
+                        <input type="submit" class="options" value="Change"/>
+                        </form>
                         </div>
                     </div> <!-- end of options container --> 
                     <div id="actions_sort_container">
