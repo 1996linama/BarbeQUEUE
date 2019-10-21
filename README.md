@@ -1,5 +1,8 @@
 # BarbeQUEUE 
 
+## Updates
+10/21: Barbequeue 2.0 will be coming soon, revamped in React.js, Express, and MongoDB!
+
 ## <b>Project Description</b>
 A restaurant queue and customer management web-based system built for daily restaurant operations.
 
